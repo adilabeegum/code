@@ -60,8 +60,7 @@ function stringFunctions() {
     out += "Index of 'a': " + s.indexOf("a") + "<br>";
     out += "Last index of 'a': " + s.lastIndexOf("a") + "<br>";
     out += "Repeat twice: " + s.repeat(2) + "<br>";
-    out += "Split into words: " + s.split(" ").join(", ") + "<br>";
-    out += "Character at position 2: " + s.at(2) + "<br>";
+
 
     document.getElementById("strOut").innerHTML = out;
 }
@@ -90,15 +89,7 @@ function mathFunctions() {
     out += "Sign: " + Math.sign(n) + "<br>";
     out += "Truncate: " + Math.trunc(n) + "<br>";
     out += "Exponential: " + Math.exp(n) + "<br>";
-    out += "Natural logarithm: " + Math.log(n) + "<br>";
-    out += "Log base 10: " + Math.log10(n) + "<br>";
-    out += "Log base 2: " + Math.log2(n) + "<br>";
-    out += "Sine: " + Math.sin(n) + "<br>";
-    out += "Cosine: " + Math.cos(n) + "<br>";
-    out += "Tangent: " + Math.tan(n) + "<br>";
-    out += "Minimum of n and 100: " + Math.min(n, 100) + "<br>";
-    out += "Maximum of n and 100: " + Math.max(n, 100) + "<br>";
-    out += "Random number (0 to 1): " + Math.random() + "<br>";
+
 
     document.getElementById("mathOut").innerHTML = out;
 }
