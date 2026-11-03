@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String and Math Functions</title>
+</head>
+<body>
+
+<h1>Predefined Functions in JavaScript</h1>
+
+<h2>String Object</h2>
+<p>
+JavaScript String methods perform operations such as finding length,
+changing case, extracting characters, replacing text, searching,
+and removing extra spaces.
+</p>
+
+Enter a string:
+<input type="text" id="txt">
+<button onclick="stringFunctions()">Apply</button>
+
+<div id="strOut"></div>
+
+<h2>Math Object</h2>
+<p>
+JavaScript Math methods perform mathematical operations such as
+rounding, square roots, powers, logarithms, and finding minimum
+and maximum values.
+</p>
+
+Enter a number:
+<input type="number" id="num">
+<button onclick="mathFunctions()">Apply</button>
+
+<div id="mathOut"></div>
+
+<script>
+
+function stringFunctions() {
+
+    var s = document.getElementById("txt").value;
+    var out = "";
+
+    out += "Length: " + s.length + "<br>";
+    out += "Uppercase: " + s.toUpperCase() + "<br>";
+    out += "Lowercase: " + s.toLowerCase() + "<br>";
+    out += "First character: " + s.charAt(0) + "<br>";
+    out += "Last character: " + s.charAt(s.length - 1) + "<br>";
+    out += "Reversed: " + s.split("").reverse().join("") + "<br>";
+
+    // Additional String Functions
+
+    out += "Trim: " + s.trim() + "<br>";
+    out += "Slice (0,3): " + s.slice(0, 3) + "<br>";
+    out += "Substring (0,3): " + s.substring(0, 3) + "<br>";
+    out += "Replace (a with @): " + s.replace("a", "@") + "<br>";
+    out += "Includes 'a': " + s.includes("a") + "<br>";
+    out += "Starts with 'A': " + s.startsWith("A") + "<br>";
+    out += "Ends with 'a': " + s.endsWith("a") + "<br>";
+    out += "Index of 'a': " + s.indexOf("a") + "<br>";
+    out += "Last index of 'a': " + s.lastIndexOf("a") + "<br>";
+    out += "Repeat twice: " + s.repeat(2) + "<br>";
+    out += "Split into words: " + s.split(" ").join(", ") + "<br>";
+    out += "Character at position 2: " + s.at(2) + "<br>";
+
+    document.getElementById("strOut").innerHTML = out;
+}
+
+function mathFunctions() {
+
+    var n = parseFloat(document.getElementById("num").value);
+    var out = "";
+
+    if (isNaN(n)) {
+        document.getElementById("mathOut").innerHTML =
+            "Please enter a valid number.";
+        return;
+    }
+
+    out += "Round: " + Math.round(n) + "<br>";
+    out += "Ceil: " + Math.ceil(n) + "<br>";
+    out += "Floor: " + Math.floor(n) + "<br>";
+    out += "Square root: " + Math.sqrt(n) + "<br>";
+    out += "Power (n^2): " + Math.pow(n, 2) + "<br>";
+
+    // Additional Math Functions
+
+    out += "Absolute value: " + Math.abs(n) + "<br>";
+    out += "Cube: " + Math.pow(n, 3) + "<br>";
+    out += "Sign: " + Math.sign(n) + "<br>";
+    out += "Truncate: " + Math.trunc(n) + "<br>";
+    out += "Exponential: " + Math.exp(n) + "<br>";
+    out += "Natural logarithm: " + Math.log(n) + "<br>";
+    out += "Log base 10: " + Math.log10(n) + "<br>";
+    out += "Log base 2: " + Math.log2(n) + "<br>";
+    out += "Sine: " + Math.sin(n) + "<br>";
+    out += "Cosine: " + Math.cos(n) + "<br>";
+    out += "Tangent: " + Math.tan(n) + "<br>";
+    out += "Minimum of n and 100: " + Math.min(n, 100) + "<br>";
+    out += "Maximum of n and 100: " + Math.max(n, 100) + "<br>";
+    out += "Random number (0 to 1): " + Math.random() + "<br>";
+
+    document.getElementById("mathOut").innerHTML = out;
+}
+
+</script>
+
+</body>
+</html>
