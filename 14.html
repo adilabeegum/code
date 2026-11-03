@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html> <head> <title>String and Math Functions in JavaScript</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #fafafa;
+    }
+
+    .section {
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+    }
+
+    h2 {
+        color: black;
+    }
+
+    button {
+        background-color: black;
+        color: white;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    pre {
+        background-color: #f0f0f0;
+        padding: 10px;
+        border-radius: 5px;
+        white-space: pre-wrap;
+    }
+</style>
+
+
+</head>
+
+<body>
+
+<div class="section">
+    <h2>1. String Functions</h2>
+
+    <p>JavaScript provides many predefined string functions for text manipulation.</p>
+
+    <pre>
+text.length 
+text.toUpperCase() 
+text.toLowerCase() 
+text.trim() 
+text.charAt(6) 
+text.indexOf("script")
+text.replace("Java", "ECMA")
+text.slice(1, 5)
+text.concat(" is awesome!")
+ </pre>
+
+    <button onclick="runStringFunctions()">Run String Functions</button>
+
+    <div id="stringOutput"></div>
+</div>
+
+<div class="section">
+    <h2>2. Math Functions</h2>
+
+    <p>JavaScript Math object provides mathematical constants and functions.</p>
+
+    <pre>
+Math.PI 
+Math.sqrt(25) 
+Math.pow(2, 3) 
+Math.abs(-10) 
+Math.ceil(4.3) 
+Math.floor(4.9) 
+Math.round(4.5) 
+Math.random() 
+Math.max(10, 20, 30) 
+Math.min(10, 20, 30) 
+</pre>
+
+    <button onclick="runMathFunctions()">Run Math Functions</button>
+
+    <div id="mathOutput"></div>
+</div>
+
+<script>
+    function runStringFunctions() {
+        let text = "Hello JavaScript!";
+
+        let output = `
+            Original String: ${text}<br>
+            Length: ${text.length}<br>
+            Uppercase: ${text.toUpperCase()}<br>
+            Lowercase: ${text.toLowerCase()}<br>
+            Trimmed: ${text.trim()}<br>
+            Character at 6: ${text.charAt(6)}<br>
+            Index of script: ${text.indexOf("script")}<br>
+            Replaced: ${text.replace("Java", "ECMA")}<br>
+            Slice(1, 5): ${text.slice(1, 5)}<br>
+            Concatenated: ${text.concat(" is awesome!")}
+        `;
+
+        document.getElementById("stringOutput").innerHTML = output;
+    }
+
+    function runMathFunctions() {
+        let output = `
+            PI: ${Math.PI}<br>
+            Square Root of 25: ${Math.sqrt(25)}<br>
+            2 Power 3: ${Math.pow(2, 3)}<br>
+            Absolute Value of -10: ${Math.abs(-10)}<br>
+            Ceil(4.3): ${Math.ceil(4.3)}<br>
+            Floor(4.9): ${Math.floor(4.9)}<br>
+            Round(4.5): ${Math.round(4.5)}<br>
+            Random (0-1): ${Math.random()}<br>
+            Maximum (10, 20, 30): ${Math.max(10, 20, 30)}<br>
+            Minimum (10, 20, 30): ${Math.min(10, 20, 30)}
+        `;
+
+        document.getElementById("mathOutput").innerHTML = output;
+    }
+</script>
+
+
+</body> </html>
