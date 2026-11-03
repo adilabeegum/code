@@ -1,0 +1,224 @@
+
+<html>
+<head>
+    <title>Student Registration Form</title>
+
+    <script>
+    function validateForm() {
+        let fname = document.getElementById("fname").value.trim();
+        let lname = document.getElementById("lname").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let mobile = document.getElementById("mobile").value.trim();
+
+        let valid = true;
+
+        if (fname == "") {
+            document.getElementById("fnameError").innerHTML = "First name is required";
+            valid = false;
+        } else if (!/^[A-Za-z ]+$/.test(fname)) {
+            document.getElementById("fnameError").innerHTML = "Enter a valid name";
+            valid = false;
+        } else {
+            document.getElementById("fnameError").innerHTML = "";
+        }
+
+        if (lname == "") {
+            document.getElementById("lnameError").innerHTML = "Last name is required";
+            valid = false;
+        } else if (!/^[A-Za-z ]+$/.test(lname)) {
+            document.getElementById("lnameError").innerHTML = "Enter a valid name";
+            valid = false;
+        } else {
+            document.getElementById("lnameError").innerHTML = "";
+        }
+
+        if (email == "") {
+            document.getElementById("emailError").innerHTML = "Email is required";
+            valid = false;
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            document.getElementById("emailError").innerHTML = "Enter a valid email";
+            valid = false;
+        } else {
+            document.getElementById("emailError").innerHTML = "";
+        }
+        if (mobile == "") {
+            document.getElementById("mobileError").innerHTML = "Mobile number is required";
+            valid = false;
+        } else if (!/^[0-9]{10}$/.test(mobile)) {
+            document.getElementById("mobileError").innerHTML = "Enter a valid 10-digit number";
+            valid = false;
+        } else {
+            document.getElementById("mobileError").innerHTML = "";
+        }
+
+        if (valid) {
+            alert("Registration successful!");
+        }
+
+        return valid;
+    }
+    </script>
+</head>
+
+<body>
+
+<h1>STUDENT REGISTRATION FORM</h1>
+
+<form onsubmit="return validateForm()">
+
+<table border="1" width="100%" cellpadding="3">
+
+<tr>
+    <td>FIRST NAME:</td>
+    <td>
+        <input type="text" id="fname" name="fname">
+        <span id="fnameError" style="color:red"></span>
+    </td>
+</tr>
+
+<tr>
+    <td>LAST NAME:</td>
+    <td>
+        <input type="text" id="lname" name="lname">
+        <span id="lnameError" style="color:red"></span>
+    </td>
+</tr>
+
+<tr>
+    <td>EMAIL ID:</td>
+    <td>
+        <input type="text" id="email" name="email">
+        <span id="emailError" style="color:red"></span>
+    </td>
+</tr>
+
+<tr>
+    <td>DOB:</td>
+    <td><input type="date" name="dob"></td>
+</tr>
+
+<tr>
+    <td>MOBILE NUMBER:</td>
+    <td>
+        <input type="text" id="mobile" name="mobile">
+        <span id="mobileError" style="color:red"></span>
+    </td>
+</tr>
+
+<tr>
+    <td>GENDER:</td>
+    <td>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+    </td>
+</tr>
+
+<tr>
+    <td>ADDRESS:</td>
+    <td><textarea rows="3" cols="20" name="address"></textarea></td>
+</tr>
+
+<tr>
+    <td>CITY:</td>
+    <td><input type="text" name="city"></td>
+</tr>
+
+<tr>
+    <td>PIN CODE:</td>
+    <td><input type="number" name="pin"></td>
+</tr>
+
+<tr>
+    <td>STATE:</td>
+    <td><input type="text" name="state"></td>
+</tr>
+
+<tr>
+    <td>COUNTRY:</td>
+    <td><input type="text" name="country"></td>
+</tr>
+
+<tr>
+    <td>HOBBIES:</td>
+    <td>
+        <input type="checkbox" name="hobby" value="Dancing"> Dancing
+        <input type="checkbox" name="hobby" value="Singing"> Singing
+        <input type="checkbox" name="hobby" value="Painting"> Painting
+        <input type="checkbox" name="hobby" value="Other"> Other
+        <input type="text" name="otherHobby">
+    </td>
+</tr>
+
+<tr>
+    <td>QUALIFICATION:</td>
+    <td>
+        <table border="1" width="100%">
+            <tr>
+                <th>SL NO</th>
+                <th>EXAMINATION</th>
+                <th>BOARD</th>
+                <th>PERCENTAGE</th>
+                <th>YEAR OF PASSING</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>CLASS X</td>
+                <td><input type="text"></td>
+                <td><input type="number"></td>
+                <td><input type="number"></td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>CLASS XII</td>
+                <td><input type="text"></td>
+                <td><input type="number"></td>
+                <td><input type="number"></td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>DEGREE</td>
+                <td><input type="text"></td>
+                <td><input type="number"></td>
+                <td><input type="number"></td>
+            </tr>
+        </table>
+    </td>
+</tr>
+
+<tr>
+    <td>COURSE APPLIED FOR:</td>
+    <td>
+        <input type="radio" name="course" value="MCA"> MCA
+        <input type="radio" name="course" value="M.Tech"> M.Tech
+        <input type="radio" name="course" value="M.Sc"> M.Sc
+        <input type="radio" name="course" value="Ph.D"> Ph.D
+        <input type="radio" name="course" value="MA English"> MA English
+    </td>
+</tr>
+
+<tr>
+    <td>PASSWORD:</td>
+    <td><input type="password" name="password"></td>
+</tr>
+
+<tr>
+    <td>DATE OF TC:</td>
+    <td><input type="date" name="tcdate"></td>
+</tr>
+
+<tr>
+    <td colspan="2" align="center">
+        <input type="submit" value="SUBMIT">
+        <input type="reset" value="RESET">
+    </td>
+</tr>
+
+</table>
+
+</form>
+
+</body>
+</html>
