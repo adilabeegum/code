@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,19 +8,21 @@
 <h1>Predefined Functions in JavaScript</h1>
 
 <h2>String Object</h2>
+
 <p>
 JavaScript String methods perform operations such as finding length,
 changing case, extracting characters, replacing text, searching,
 and removing extra spaces.
 </p>
 
-Enter a string:
-<input type="text" id="txt">
+<p>String: <b>"Hello JavaScript"</b></p>
+
 <button onclick="stringFunctions()">Apply</button>
 
 <div id="strOut"></div>
 
 <h2>Math Object</h2>
+
 <p>
 JavaScript Math methods perform mathematical operations such as
 rounding, square roots, powers, logarithms, and finding minimum
@@ -38,7 +39,7 @@ Enter a number:
 
 function stringFunctions() {
 
-    var s = document.getElementById("txt").value;
+    var s = "Hello JavaScript";
     var out = "";
 
     out += "Length: " + s.length + "<br>";
@@ -60,7 +61,6 @@ function stringFunctions() {
     out += "Index of 'a': " + s.indexOf("a") + "<br>";
     out += "Last index of 'a': " + s.lastIndexOf("a") + "<br>";
     out += "Repeat twice: " + s.repeat(2) + "<br>";
-
 
     document.getElementById("strOut").innerHTML = out;
 }
@@ -89,7 +89,6 @@ function mathFunctions() {
     out += "Sign: " + Math.sign(n) + "<br>";
     out += "Truncate: " + Math.trunc(n) + "<br>";
     out += "Exponential: " + Math.exp(n) + "<br>";
-
 
     document.getElementById("mathOut").innerHTML = out;
 }
