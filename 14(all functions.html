@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,8 +18,6 @@ and removing extra spaces.
 
 <p>String: <b>"Hello JavaScript"</b></p>
 
-<button onclick="stringFunctions()">Apply</button>
-
 <div id="strOut"></div>
 
 <h2>Math Object</h2>
@@ -29,9 +28,7 @@ rounding, square roots, powers, logarithms, and finding minimum
 and maximum values.
 </p>
 
-Enter a number:
-<input type="number" id="num">
-<button onclick="mathFunctions()">Apply</button>
+<p>Number: <b>25</b></p>
 
 <div id="mathOut"></div>
 
@@ -67,14 +64,8 @@ function stringFunctions() {
 
 function mathFunctions() {
 
-    var n = parseFloat(document.getElementById("num").value);
+    var n = 25;
     var out = "";
-
-    if (isNaN(n)) {
-        document.getElementById("mathOut").innerHTML =
-            "Please enter a valid number.";
-        return;
-    }
 
     out += "Round: " + Math.round(n) + "<br>";
     out += "Ceil: " + Math.ceil(n) + "<br>";
@@ -92,6 +83,10 @@ function mathFunctions() {
 
     document.getElementById("mathOut").innerHTML = out;
 }
+
+// Automatically execute both functions
+stringFunctions();
+mathFunctions();
 
 </script>
 
