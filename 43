@@ -1,0 +1,128 @@
+import calendar
+
+year = int(input("Enter a year: "))
+
+if calendar.isleap(year):
+    print("Leap Year")
+else:
+    print("Not a Leap Year")
+
+
+
+import time
+import datetime
+
+now = datetime.datetime.now()
+
+print("Current date and time:", now)
+print("Current year:", now.year)
+print("Month of the year:", now.month)
+print("Week number:", now.strftime("%U"))
+print("Weekday number:", now.weekday())
+print("Day of the year:", now.timetuple().tm_yday)
+print("Day of the month:", now.day)
+print("Day of the week:", now.strftime("%A"))
+
+
+
+import datetime
+
+today = datetime.date.today()
+
+yesterday = today - datetime.timedelta(days=1)
+tomorrow = today + datetime.timedelta(days=1)
+
+print("Yesterday:", yesterday)
+print("Today:", today)
+print("Tomorrow:", tomorrow)
+
+
+
+
+def check(n):
+    temp = n
+    power = len(str(n))
+    total = 0
+
+    while temp > 0:
+        digit = temp % 10
+        total = total + digit ** power
+        temp = temp // 10
+
+    return total == n
+
+
+import Armstrong
+
+lower = int(input("Enter lower limit: "))
+upper = int(input("Enter upper limit: "))
+
+print("Armstrong numbers are:")
+
+for i in range(lower, upper + 1):
+    if Armstrong.check(i):
+        print(i, end=" ")
+
+
+
+def area(l, b):
+    return l * b
+
+def perimeter(l, b):
+    return 2 * (l + b)
+
+
+
+def area(r):
+    return 3.14 * r * r
+
+def perimeter(r):
+    return 2 * 3.14 * r
+
+
+def area(l, b, h):
+    return 2 * (l*b + b*h + h*l)
+
+def perimeter(l, b, h):
+    return 4 * (l + b + h)
+
+
+def area(r):
+    return 4 * 3.14 * r * r
+
+def perimeter(r):
+    return 2 * 3.14 * r
+
+
+import graphics.rectangle as rect
+from graphics.circle import area, perimeter
+from graphics.three_d_graphics.cuboid import *
+from graphics.three_d_graphics.sphere import area as sphere_area, perimeter as sphere_perimeter
+
+l = float(input("Enter rectangle length: "))
+b = float(input("Enter rectangle breadth: "))
+
+print("Rectangle Area:", rect.area(l, b))
+print("Rectangle Perimeter:", rect.perimeter(l, b))
+
+r = float(input("Enter circle radius: "))
+
+print("Circle Area:", area(r))
+print("Circle Perimeter:", perimeter(r))
+
+l = float(input("Enter cuboid length: "))
+b = float(input("Enter cuboid breadth: "))
+h = float(input("Enter cuboid height: "))
+
+print("Cuboid Surface Area:", area(l, b, h))
+print("Cuboid Total Edge Length:", perimeter(l, b, h))
+
+r = float(input("Enter sphere radius: "))
+
+print("Sphere Surface Area:", sphere_area(r))
+print("Sphere Circumference:", sphere_perimeter(r))
+
+
+
+
+
