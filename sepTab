@@ -1,0 +1,8 @@
+if ($row['password'] == $p) {
+    session_start();
+    $_SESSION['username'] = $u;
+
+    echo "<script>
+        window.location.href = 'welcome.php';
+    </script>";
+}
