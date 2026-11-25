@@ -1,0 +1,10 @@
+CREATE DATABASE login;
+
+USE login;
+
+CREATE TABLE users (
+    username VARCHAR(30),
+    password VARCHAR(30)
+);
+
+INSERT INTO users VALUES ('anagha', '12345');
